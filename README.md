@@ -36,7 +36,9 @@ The bundle is a local directory; DSH installs it as a linked plugin.
    their preset; start a new session to use it.
 3. Click **Learn** in the left sidebar to open the plan and graph page.
 
-The bundle has no dependencies and no build step.
+The bundle has no dependencies and no build step. The profile links to this
+directory, so keep it in place after installing; removing it uninstalls the
+plugin's code (the data file stays).
 
 Check that the Host half is live:
 
