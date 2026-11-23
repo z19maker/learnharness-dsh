@@ -1,0 +1,48 @@
+{
+  "name": "@local/learnharness",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A Tutor preset that teaches one reasoning step at a time, with a durable knowledge graph and a visual Learn page.",
+  "license": "MIT",
+  "exports": {
+    ".": "./index.js",
+    "./tutor": "./tutor.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "tutor.js",
+    "client.js",
+    "lib",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "docs",
+    "icon.svg",
+    "README.md"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar"
+      ]
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/z19maker/learnharness-dsh.git"
+  },
+  "homepage": "https://github.com/z19maker/learnharness-dsh"
+}

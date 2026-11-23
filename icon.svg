@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="LearnHarness">
+  <g fill="none" stroke="#e6e6e6" stroke-width="4" stroke-linecap="round">
+    <path d="M47 18a22 22 0 0 0-31 5"/>
+    <path d="M17 47a22 22 0 0 0 31-5"/>
+  </g>
+  <circle cx="44" cy="18" r="5" fill="#f59e0b"/>
+  <circle cx="20" cy="46" r="3.5" fill="#e6e6e6"/>
+  <circle cx="32" cy="32" r="3" fill="#e6e6e6" opacity=".55"/>
+</svg>

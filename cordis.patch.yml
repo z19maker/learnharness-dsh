@@ -1,0 +1,44 @@
+- insert:
+    # Host half: durable lesson/graph store, the /learnharness/api read route,
+    # and the learnStore service the Tutor preset's tools consume.
+    - id: learnharness
+      name: '@local/learnharness'
+
+    # The Tutor preset is the only place the learning tools appear. It has no
+    # shell, no write tools, and a persona that replaces the coding assistant.
+    - id: preset-tutor
+      name: '@deepseek-ai/dsh-agent-preset'
+      config:
+        id: tutor
+        name: Tutor
+        description: Teaches one reasoning step at a time from what you already understand, with a persistent knowledge graph.
+        order: 4
+        plugins:
+          - id: persona
+            name: '@deepseek-ai/dsh-persona'
+            config:
+              prefix: You are LearnHarness, a patient tutor. You build understanding one reasoning step at a time.
+              complete: true
+              includeRuntimeContext: false
+          - id: learnharness-tutor
+            name: '@local/learnharness/tutor'
+          - id: tool-ask-user
+            name: '@deepseek-ai/dsh-tool-ask-user'
+          - id: tool-fs
+            name: '@deepseek-ai/dsh-tool-fs'
+            config:
+              read: true
+              readImage: true
+              write: false
+              edit: false
+              applyPatch: false
+          - id: compaction
+            name: cordis:group
+            group: true
+            isolate:
+              compaction: true
+            config:
+              - id: compaction-basic
+                name: '@deepseek-ai/dsh-compaction-basic'
+              - id: command-compact
+                name: '@deepseek-ai/dsh-command-compact'

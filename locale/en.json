@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "LearnHarness",
+    "description": "A Tutor preset that teaches one reasoning step at a time, with a durable knowledge graph and a visual Learn page.",
+    "detail": "docs/DETAIL.md"
+  }
+}
